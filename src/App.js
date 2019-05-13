@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import Container from './components/Container';
 
-// import fetchInitialState, { toggleTask } from './state/index'
-import fetchInitialState, { toggleTask } from './state/elixir'
+import fetchInitialState, { toggleTask } from './state/index'
+// import fetchInitialState, { toggleTask } from './state/elixir'
 
 export default class App extends Component {
   componentDidMount() {
@@ -12,7 +12,6 @@ export default class App extends Component {
         ...data,
         currentPath: window.location.pathname.replace(/\/coding_challenge\/index\.html/, '') || '/'
       })
-      // this.setState({ ...data, currentPath: window.location.pathname || '/' })
     })
   }
 
