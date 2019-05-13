@@ -22,7 +22,10 @@ const Task = ({
     {
       isLockedTask({ dependencyIds, allTasks }) ? (
         <div className={liGridCName}>
-          <img src="/locked.svg" alt="Locked" />
+          <img
+            src={[process.env.PUBLIC_URL, '/locked.svg'].join('')}
+            alt="Locked"
+          />
           <span className={liGridItemNameCName}>Locked Task</span>
         </div>
       ) : (
@@ -32,8 +35,8 @@ const Task = ({
         >
           {
             completedAt ? (
-              <img src="/completed.svg" alt="Complete" />
-            ) : <img src="/incomplete.svg" alt="Incomplete" />
+              <img src={[process.env.PUBLIC_URL, '/completed.svg'].join('')} alt="Complete" />
+            ) : <img src={[process.env.PUBLIC_URL, '/incomplete.svg'].join('')} alt="Incomplete" />
           }
 
           <span

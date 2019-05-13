@@ -22,7 +22,12 @@ const GroupList = ({ groups, linkClickHandler }) => [
               onClick={(event) => { linkClickHandler(groupPath, event) }}
               className={liGridCName}
             >
-              <div><img src="/group.svg" alt="Group" /></div>
+              <div>
+                <img
+                  src={[process.env.PUBLIC_URL, '/group.svg'].join('')}
+                  alt="Group"
+                />
+              </div>
               <div>
                 <div className={liGridItemNameCName}>{group.name}</div>
                 <div className="progress">{xOfTasksComplete} OF {tasks.length} TASKS COMPLETE</div>

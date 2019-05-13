@@ -1,5 +1,6 @@
 {
   "name": "coding-challenge",
+  "homepage": "https://example.org/coding_challenge",
   "proxy": "http://localhost:4000",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,8 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "deploy": "yarn build && rm -rf ../../../assets/static/coding_challenge/ && /bin/cp -r ./build ../../../assets/static/coding_challenge/",
+    "build": "react-scripts build",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },

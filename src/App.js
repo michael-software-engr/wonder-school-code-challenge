@@ -8,7 +8,11 @@ import fetchInitialState, { toggleTask } from './state/elixir'
 export default class App extends Component {
   componentDidMount() {
     fetchInitialState().then((data) => {
-      this.setState({ ...data, currentPath: window.location.pathname || '/' })
+      this.setState({
+        ...data,
+        currentPath: window.location.pathname.replace(/\/coding_challenge\/index\.html/, '') || '/'
+      })
+      // this.setState({ ...data, currentPath: window.location.pathname || '/' })
     })
   }
 
