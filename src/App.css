@@ -1,0 +1,54 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+main {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+main hr {
+  border-color: #FEFEFE;
+}
+
+main .page-title {
+  color: #727272;
+  margin-bottom: 1.5rem;
+}
+
+main .page-title-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+main .page-title-row .nav-all-groups {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+main .list-item-grid {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  align-items: center;
+
+  margin: 1rem auto;
+}
+
+main .list-item-grid .list-item-name {
+  color: #505050;
+  font-weight: 600;
+}
+
+main .group-list-actual a {
+  text-decoration: none;
+}
+
+main .group-list-actual .progress {
+  color: #C0C0C0;
+}
+
+main .line-through {
+  text-decoration: line-through;
+}

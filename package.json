@@ -1,5 +1,6 @@
 {
   "name": "coding-challenge",
+  "proxy": "http://localhost:4000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +9,8 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
