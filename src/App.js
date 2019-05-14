@@ -34,8 +34,6 @@ export default class App extends Component {
   render() {
     if (!this.state) return <div>Loading....</div>;
 
-    console.log({ state: this.state, path: window.location.pathname })
-
     return (
       <Container
         state={this.state}
