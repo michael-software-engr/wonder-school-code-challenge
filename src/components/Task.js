@@ -13,43 +13,87 @@ const isLockedTask = ({ dependencyIds, allTasks }) => (
   })
 )
 
-const Task = ({
-  task: { id, task, completedAt, dependencyIds },
-  allTasks,
-  toggleTaskHandler
-}) => (
-  <article>
-    {
-      isLockedTask({ dependencyIds, allTasks }) ? (
-        <div className={liGridCName}>
-          <img
-            src={[process.env.PUBLIC_URL, '/locked.svg'].join('')}
-            alt="Locked"
-          />
-          <span className={liGridItemNameCName}>Locked Task</span>
-        </div>
-      ) : (
-        <div
-          onClick={(event) => { toggleTaskHandler(id, event); }}
-          className={liGridCName}
-        >
-          {
-            completedAt ? (
-              <img src={[process.env.PUBLIC_URL, '/completed.svg'].join('')} alt="Complete" />
-            ) : <img src={[process.env.PUBLIC_URL, '/incomplete.svg'].join('')} alt="Incomplete" />
-          }
+class Task extends React.PureComponent {
+  render() {
+    const {
+      task: { id, task, completedAt, dependencyIds },
+      allTasks,
+      toggleTaskHandler
+    } = this.props;
 
-          <span
-            className={[liGridItemNameCName, completedAt ? 'line-through' : ''].join(' ')}
-          >
-            {task}
-          </span>
-        </div>
-      )
-    }
-    <hr />
-  </article>
-)
+    return (
+      <article>
+        {
+          isLockedTask({ dependencyIds, allTasks }) ? (
+            <div className={liGridCName}>
+              <img
+                src={[process.env.PUBLIC_URL, '/locked.svg'].join('')}
+                alt="Locked"
+              />
+              <span className={liGridItemNameCName}>Locked Task</span>
+            </div>
+          ) : (
+            <div
+              onClick={(event) => { toggleTaskHandler(id, event); }}
+              className={liGridCName}
+            >
+              {
+                completedAt ? (
+                  <img src={[process.env.PUBLIC_URL, '/completed.svg'].join('')} alt="Complete" />
+                ) : <img src={[process.env.PUBLIC_URL, '/incomplete.svg'].join('')} alt="Incomplete" />
+              }
+
+              <span
+                className={[liGridItemNameCName, completedAt ? 'line-through' : ''].join(' ')}
+              >
+                {task}
+              </span>
+            </div>
+          )
+        }
+        <hr />
+      </article>
+    );
+  }
+}
+
+// const Task = ({
+//   task: { id, task, completedAt, dependencyIds },
+//   allTasks,
+//   toggleTaskHandler
+// }) => (
+//   <article>
+//     {
+//       isLockedTask({ dependencyIds, allTasks }) ? (
+//         <div className={liGridCName}>
+//           <img
+//             src={[process.env.PUBLIC_URL, '/locked.svg'].join('')}
+//             alt="Locked"
+//           />
+//           <span className={liGridItemNameCName}>Locked Task</span>
+//         </div>
+//       ) : (
+//         <div
+//           onClick={(event) => { toggleTaskHandler(id, event); }}
+//           className={liGridCName}
+//         >
+//           {
+//             completedAt ? (
+//               <img src={[process.env.PUBLIC_URL, '/completed.svg'].join('')} alt="Complete" />
+//             ) : <img src={[process.env.PUBLIC_URL, '/incomplete.svg'].join('')} alt="Incomplete" />
+//           }
+
+//           <span
+//             className={[liGridItemNameCName, completedAt ? 'line-through' : ''].join(' ')}
+//           >
+//             {task}
+//           </span>
+//         </div>
+//       )
+//     }
+//     <hr />
+//   </article>
+// )
 
 Task.propTypes = {
   task: PropTypes.shape().isRequired,
